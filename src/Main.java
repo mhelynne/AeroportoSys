@@ -44,6 +44,23 @@ public class Main {
 		enderecoGRU.setPais("Brasil");
 		
 		aeroportoMCZ.setEndereco(enderecoGRU); // Associação entre Aeroporto e Endereço
+
+
+		// Criando outro aeroporto (GIG)
+		
+		Aeroporto aeroportoGIG = new Aeroporto();
+		aeroportoGRU.setNome("Aeroporto Tom Jobim - Galeao");
+		aeroportoGRU.setCodigo("GIG");
+		aeroportoGRU.setAnoDeInauguracao(1981);
+		
+		Endereco enderecoGRU = new Endereco();
+		enderecoGRU.setLogradouro("Ilha do Governador");
+		enderecoGRU.setNumero(0);
+		enderecoGRU.setCidade("Rio de Janeiro");
+		enderecoGRU.setEstado("Rio de Janeiro");
+		enderecoGRU.setPais("Brasil");
+		
+		aeroportoMCZ.setEndereco(enderecoGIG); // Associação entre Aeroporto e Endereço
 		
 		
 		// Criando um voo de MCZ para GRU		
@@ -54,15 +71,29 @@ public class Main {
 		voo1.setQutPassageiros(252);
 		voo1.setOrigem(aeroportoMCZ);
 		voo1.setDestino(aeroportoGRU);
+		
+
+		// Criando um voo de MCZ para GIG		
+		Voo voo1 = new Voo();
+		voo1.setPartida(parseDate("22-08-2022 20:00:00"));
+		voo1.setChegada(parseDate("22-08-2022 22:00:00"));
+		voo1.setDuracaoHoras(2);
+		voo1.setQutPassageiros(312);
+		voo1.setOrigem(aeroportoMCZ);
+		voo1.setDestino(aeroportoGIG);
 			
+	
 
 		Date dia02dez = parseDate("02-12-2018 00:00:00");
 		Date dia03dez = parseDate("03-12-2018 00:00:00");		
 		
-		
+		Date dia22ago = parseDate("22-08-2022 00:00:00");
+
 		// Prints
 		resumoDeVoos(aeroportoMCZ, dia02dez);
-		resumoDeVoos(aeroportoGRU, dia03dez);	
+		resumoDeVoos(aeroportoGRU, dia03dez);
+		
+		resumoDeVoos(aeroportoGRU, dia22ago);	
 
 	}
 	
